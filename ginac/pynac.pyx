@@ -15,7 +15,8 @@ Pynac interface
 #*****************************************************************************
 
 from cpython cimport *
-from ginac.pynac cimport *
+import ginac.gmptypes
+
 
 cdef int GINAC_FN_SERIAL = 0
 
@@ -76,3 +77,4 @@ def get_fn_serial():
         True
     """
     return get_fn_serial_c()
+

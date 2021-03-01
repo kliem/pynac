@@ -34,6 +34,8 @@ from libcpp.pair cimport pair
 from libcpp.string cimport string as stdstring
 from ginac.gmptypes cimport mpz_t, mpq_t, mpz_ptr, mpq_ptr
 
+'''
+
 cdef extern from "pynac_wrap.h":
     void ginac_pyinit_Integer(object)
     void ginac_pyinit_Float(object)
@@ -576,3 +578,5 @@ cdef extern from "order.h":
             (GEx left, GEx right) except +
     bint print_order_compare_mul "GiNaC::print_order_mul().compare" \
             (GEx left, GEx right) except +
+
+'''

@@ -17,7 +17,7 @@
 
 using namespace GiNaC;
 
-void list_symbols(const ex& e, std::set<ex, ex_is_less> &s)
+static void list_symbols(const ex& e, std::set<ex, ex_is_less> &s)
 {
     if (is_a<symbol>(e)) {
         s.insert(e);
@@ -28,35 +28,35 @@ void list_symbols(const ex& e, std::set<ex, ex_is_less> &s)
 }
 
 
-ex g_function_evalv(unsigned serial, exvector& vec, bool hold)
+static ex g_function_evalv(unsigned serial, exvector& vec, bool hold)
 {
     if (hold)
         return function(serial, vec).hold();
     return function(serial, vec);
 }
 
-ex g_function_eval0(unsigned serial, bool hold)
+static ex g_function_eval0(unsigned serial, bool hold)
 {
     if (hold)
         return function(serial).hold();
     return function(serial);
 }
 
-ex g_function_eval1(unsigned serial, const ex& arg1, bool hold)
+static ex g_function_eval1(unsigned serial, const ex& arg1, bool hold)
 {
     if (hold)
         return function(serial, arg1).hold();
     return function(serial, arg1);
 }
 
-ex g_function_eval2(unsigned serial, const ex& arg1, const ex& arg2, bool hold)
+static ex g_function_eval2(unsigned serial, const ex& arg1, const ex& arg2, bool hold)
 {
     if (hold)
         return function(serial, arg1, arg2).hold();
     return function(serial, arg1, arg2);
 }
 
-ex g_function_eval3(unsigned serial, const ex& arg1, const ex& arg2,
+static ex g_function_eval3(unsigned serial, const ex& arg1, const ex& arg2,
         const ex& arg3, bool hold)
 {
     if (hold)
@@ -64,42 +64,42 @@ ex g_function_eval3(unsigned serial, const ex& arg1, const ex& arg2,
     return function(serial, arg1, arg2, arg3);
 }
 
-bool g_is_a_terminating_series(const ex& e) {
+static bool g_is_a_terminating_series(const ex& e) {
     if (is_a<pseries>(e)) {
         return (ex_to<pseries>(e)).is_terminating();
     }
     return false;
 }
 
-ex g_series_var(const ex& e) {
+static ex g_series_var(const ex& e) {
     if (is_a<pseries>(e)) {
         return (ex_to<pseries>(e)).get_var();
     }
     return 0;
 }
 
-relational::operators relational_operator(const ex& e) {
+static relational::operators relational_operator(const ex& e) {
     // unsafe cast -- be damn sure the input is a relational.
     return (ex_to<relational>(e)).the_operator();
 }
 
-relational::result decide_relational(const ex& e) {
+static relational::result decide_relational(const ex& e) {
     return (ex_to<relational>(e)).decide();
 }
 
-bool is_negative(ex x) {
+static bool is_negative(ex x) {
     if (is_a<numeric>(x)) {
         return (ex_to<numeric>(x)).is_negative();
     }
     return false;
 }
 
-PyObject* py_object_from_numeric(ex x) {
+static PyObject* py_object_from_numeric(ex x) {
     return (ex_to<numeric>(x)).to_pyobject();
 }
 
 template <class T>
-PyObject* _to_PyString_latex(const T *x)
+static PyObject* _to_PyString_latex(const T *x)
 {
   std::ostringstream instore;
   instore << latex << (*x);

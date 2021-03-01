@@ -302,156 +302,6 @@ const numeric *_num144_p;
 const ex _ex144 = _ex144;
 #pragma clang diagnostic pop
 
-/** Ctor of static initialization helpers.  The fist call to this is going
- *  to initialize the library, the others do nothing. */
-library_init::library_init()
-{
-	if (count++==0) {
-		(_num_120_p = new numeric(-120))->setflag(status_flags::dynallocated);
-		(_num_60_p = new numeric(-60))->setflag(status_flags::dynallocated);
-		(_num_48_p = new numeric(-48))->setflag(status_flags::dynallocated);
-		(_num_30_p = new numeric(-30))->setflag(status_flags::dynallocated);
-		(_num_25_p = new numeric(-25))->setflag(status_flags::dynallocated);
-		(_num_24_p = new numeric(-24))->setflag(status_flags::dynallocated);
-		(_num_20_p = new numeric(-20))->setflag(status_flags::dynallocated);
-		(_num_18_p = new numeric(-18))->setflag(status_flags::dynallocated);
-		(_num_15_p = new numeric(-15))->setflag(status_flags::dynallocated);
-		(_num_12_p = new numeric(-12))->setflag(status_flags::dynallocated);
-		(_num_11_p = new numeric(-11))->setflag(status_flags::dynallocated);
-		(_num_10_p = new numeric(-10))->setflag(status_flags::dynallocated);
-		(_num_9_p = new numeric(-9))->setflag(status_flags::dynallocated);
-		(_num_8_p = new numeric(-8))->setflag(status_flags::dynallocated);
-		(_num_7_p = new numeric(-7))->setflag(status_flags::dynallocated);
-		(_num_6_p = new numeric(-6))->setflag(status_flags::dynallocated);
-		(_num_5_p = new numeric(-5))->setflag(status_flags::dynallocated);
-		(_num_4_p = new numeric(-4))->setflag(status_flags::dynallocated);
-		(_num_3_p = new numeric(-3))->setflag(status_flags::dynallocated);
-		(_num_2_p = new numeric(-2))->setflag(status_flags::dynallocated);
-		(_num_1_p = new numeric(-1))->setflag(status_flags::dynallocated);
-		(_num_1_2_p = new numeric(-1,2))->setflag(status_flags::dynallocated);
-		(_num_1_3_p = new numeric(-1,3))->setflag(status_flags::dynallocated);
-		(_num_1_4_p = new numeric(-1,4))->setflag(status_flags::dynallocated);
-		(_num0_p = new numeric(0))->setflag(status_flags::dynallocated);
-		_num0_bp  = _num0_p;  // Cf. class ex default ctor.
-		(_num1_4_p = new numeric(1,4))->setflag(status_flags::dynallocated);
-		(_num1_3_p = new numeric(1,3))->setflag(status_flags::dynallocated);
-		(_num1_2_p = new numeric(1,2))->setflag(status_flags::dynallocated);
-		(_num1_p = new numeric(1))->setflag(status_flags::dynallocated);
-		(_num2_p = new numeric(2))->setflag(status_flags::dynallocated);
-		(_num3_p = new numeric(3))->setflag(status_flags::dynallocated);
-		(_num4_p = new numeric(4))->setflag(status_flags::dynallocated);
-		(_num5_p = new numeric(5))->setflag(status_flags::dynallocated);
-		(_num6_p = new numeric(6))->setflag(status_flags::dynallocated);
-		(_num7_p = new numeric(7))->setflag(status_flags::dynallocated);
-		(_num8_p = new numeric(8))->setflag(status_flags::dynallocated);
-		(_num9_p = new numeric(9))->setflag(status_flags::dynallocated);
-		(_num10_p = new numeric(10))->setflag(status_flags::dynallocated);
-		(_num11_p = new numeric(11))->setflag(status_flags::dynallocated);
-		(_num12_p = new numeric(12))->setflag(status_flags::dynallocated);
-		(_num14_p = new numeric(14))->setflag(status_flags::dynallocated);
-		(_num15_p = new numeric(15))->setflag(status_flags::dynallocated);
-		(_num16_p = new numeric(16))->setflag(status_flags::dynallocated);
-		(_num18_p = new numeric(18))->setflag(status_flags::dynallocated);
-		(_num20_p = new numeric(20))->setflag(status_flags::dynallocated);
-		(_num21_p = new numeric(21))->setflag(status_flags::dynallocated);
-		(_num22_p = new numeric(22))->setflag(status_flags::dynallocated);
-		(_num24_p = new numeric(24))->setflag(status_flags::dynallocated);
-		(_num25_p = new numeric(25))->setflag(status_flags::dynallocated);
-		(_num26_p = new numeric(26))->setflag(status_flags::dynallocated);
-		(_num27_p = new numeric(27))->setflag(status_flags::dynallocated);
-		(_num28_p = new numeric(28))->setflag(status_flags::dynallocated);
-		(_num30_p = new numeric(30))->setflag(status_flags::dynallocated);
-		(_num36_p = new numeric(36))->setflag(status_flags::dynallocated);
-		(_num48_p = new numeric(48))->setflag(status_flags::dynallocated);
-		(_num60_p = new numeric(60))->setflag(status_flags::dynallocated);
-		(_num72_p = new numeric(72))->setflag(status_flags::dynallocated);
-		(_num120_p = new numeric(120))->setflag(status_flags::dynallocated);
-		(_num144_p = new numeric(144))->setflag(status_flags::dynallocated);
-
-		new((void*)&_ex_120) ex(*_num_120_p);
-		new((void*)&_ex_60) ex(*_num_60_p);
-		new((void*)&_ex_48) ex(*_num_48_p);
-		new((void*)&_ex_30) ex(*_num_30_p);
-		new((void*)&_ex_25) ex(*_num_25_p);
-		new((void*)&_ex_24) ex(*_num_24_p);
-		new((void*)&_ex_20) ex(*_num_20_p);
-		new((void*)&_ex_18) ex(*_num_18_p);
-		new((void*)&_ex_15) ex(*_num_15_p);
-		new((void*)&_ex_12) ex(*_num_12_p);
-		new((void*)&_ex_11) ex(*_num_11_p);
-		new((void*)&_ex_10) ex(*_num_10_p);
-		new((void*)&_ex_9) ex(*_num_9_p);
-		new((void*)&_ex_8) ex(*_num_8_p);
-		new((void*)&_ex_7) ex(*_num_7_p);
-		new((void*)&_ex_6) ex(*_num_6_p);
-		new((void*)&_ex_5) ex(*_num_5_p);
-		new((void*)&_ex_4) ex(*_num_4_p);
-		new((void*)&_ex_3) ex(*_num_3_p);
-		new((void*)&_ex_2) ex(*_num_2_p);
-		new((void*)&_ex_1) ex(*_num_1_p);
-		new((void*)&_ex_1_2) ex(*_num_1_2_p);
-		new((void*)&_ex_1_3) ex(*_num_1_3_p);
-		new((void*)&_ex_1_4) ex(*_num_1_4_p);
-		new((void*)&_ex0) ex(*_num0_p);
-		new((void*)&_ex1_4) ex(*_num1_4_p);
-		new((void*)&_ex1_3) ex(*_num1_3_p);
-		new((void*)&_ex1_2) ex(*_num1_2_p);
-		new((void*)&_ex1) ex(*_num1_p);
-		new((void*)&_ex2) ex(*_num2_p);
-		new((void*)&_ex3) ex(*_num3_p);
-		new((void*)&_ex4) ex(*_num4_p);
-		new((void*)&_ex5) ex(*_num5_p);
-		new((void*)&_ex6) ex(*_num6_p);
-		new((void*)&_ex7) ex(*_num7_p);
-		new((void*)&_ex8) ex(*_num8_p);
-		new((void*)&_ex9) ex(*_num9_p);
-		new((void*)&_ex10) ex(*_num10_p);
-		new((void*)&_ex11) ex(*_num11_p);
-		new((void*)&_ex12) ex(*_num12_p);
-		new((void*)&_ex14) ex(*_num14_p);
-		new((void*)&_ex15) ex(*_num15_p);
-		new((void*)&_ex16) ex(*_num16_p);
-		new((void*)&_ex18) ex(*_num18_p);
-		new((void*)&_ex20) ex(*_num20_p);
-		new((void*)&_ex21) ex(*_num21_p);
-		new((void*)&_ex22) ex(*_num22_p);
-		new((void*)&_ex24) ex(*_num24_p);
-		new((void*)&_ex25) ex(*_num25_p);
-		new((void*)&_ex26) ex(*_num26_p);
-		new((void*)&_ex27) ex(*_num27_p);
-		new((void*)&_ex28) ex(*_num28_p);
-		new((void*)&_ex30) ex(*_num30_p);
-		new((void*)&_ex36) ex(*_num36_p);
-		new((void*)&_ex48) ex(*_num48_p);
-		new((void*)&_ex60) ex(*_num60_p);
-		new((void*)&_ex72) ex(*_num72_p);
-		new((void*)&_ex120) ex(*_num120_p);
-		new((void*)&_ex144) ex(*_num144_p);
-
-		// Initialize print context class info (this is not strictly necessary
-		// but we do it anyway to make print_context_class_info::dump_hierarchy()
-		// output the whole hierarchy whether or not the classes are actually
-		// used)
-		print_context::get_class_info_static();
-		print_dflt::get_class_info_static();
-		print_latex::get_class_info_static();
-		print_python::get_class_info_static();
-		print_python_repr::get_class_info_static();
-		print_tree::get_class_info_static();
-	}
-}
-
-
-/** Dtor of static initialization helpers.  The last call to this is going
- *  to shut down the library, the others do nothing. */
-library_init::~library_init()
-{
-	if (--count==0) {
-		// In theory, we would have to clean up here.  But since we were
-		// only initializing memory in the ctor and that memory is reclaimed
-		// anyways by the OS when the program exits, we skip this.
-	}
-}
 
 // comment skeleton for header files
 
@@ -466,7 +316,7 @@ library_init::~library_init()
 
 	// functions overriding virtual functions from base classes
 	// none
-	
+
 	// new virtual functions which can be overridden by derived classes
 	// none
 
@@ -475,7 +325,7 @@ library_init::~library_init()
 
 // member variables
 // none
-	
+
 
 
 // comment skeleton for implementation files

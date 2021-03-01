@@ -37,7 +37,7 @@ class CanonicalForm;
 
 namespace GiNaC {
 #ifdef _MSC_VER
-  // MSVC produces a different symbol for _ex0 when it is declared inside   
+  // MSVC produces a different symbol for _ex0 when it is declared inside
   // ex::is_zero() than when it is declared at top level as follows
   extern const ex _ex0;
 #endif
@@ -94,7 +94,7 @@ class ex {
 	template<class T> friend inline const T &ex_to(const ex &);
 	template<class T> friend inline bool is_a(const ex &);
 	template<class T> friend inline bool is_exactly_a(const ex &);
-	
+
 	friend class print_order;
 	friend class print_order_mul;
 	friend class print_order_pair;
@@ -116,7 +116,7 @@ public:
 	 *  in the expression must be specified in a lst in the second argument.
 	 *  Undefined symbols and other parser errors will throw an exception. */
 	ex(const std::string &s, const ex &l);
-	
+
 public:
 	// non-virtual functions in this class
 public:
@@ -138,7 +138,7 @@ public:
 
 	// evaluation
 	ex eval(int level = 0) const { return bp->eval(level); }
-	ex evalf(int level = 0, PyObject* parent=nullptr) const 
+	ex evalf(int level = 0, PyObject* parent=nullptr) const
 	{ return bp->evalf(level, parent); }
 
 	// printing
@@ -266,7 +266,7 @@ public:
         bool is_negative_or_minus() const;
         bool is_num_integer() const;
         bool is_num_fraction() const;
-	
+
 	// noncommutativity
 	unsigned return_type() const { return bp->return_type(); }
 	tinfo_t return_type_tinfo() const { return bp->return_type_tinfo(); }
